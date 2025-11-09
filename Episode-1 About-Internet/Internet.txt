@@ -1,0 +1,200 @@
+------------------------------------------------------ | How Internet Works | --------------------------------------------------------
+
+Que -1 What is Internet?
+Ans -1 The Internet is a global network of interconnected computers that communicate using standardized protocols 
+(mainly TCP/IP) to share information and resources.
+
+Think of it as a “network of networks” — millions of smaller private, public, academic, business, and government 
+networks linked together.
+
+🧱 History of the Internet
+Year	        Event
+1960s	        U.S. Department of Defense created ARPA (Advanced Research Projects Agency) to promote advanced communication research.
+1969	        In 1969, ARPA developed ARPANET who built world's first network that connecting 4 universities (UCLA, Stanford, UCSB, Utah).
+1970s	        TCP/IP protocols developed which providing a standard way for computers to communicate across networks.
+1983	        ARPANET officially adopted TCP/IP which is considered the true birth of the modern Internet.
+1990s	        Tim Berners-Lee invented the World Wide Web (WWW), revolutionizing the way people accessed and shared information.
+2000s–2020s	
+Rapid evolution: The Internet evolved rapidly with advancements in cloud computing, IoT (Internet of Things), 
+Web 3.0, artificial intelligence (AI), and blockchain technologies, shaping the highly connected digital world we live in today.
+
+Que -2 How Computers Send Data All Over the World?
+                OR
+       How computer communicate with each other?
+Ans -2 Every computer connected to the Internet has a unique IP address, just like a phone number.
+When two devices communicate, they follow a set of rules called protocols to ensure smooth data exchange.
+The most common and foundational protocol used worldwide is TCP/IP (Transmission Control Protocol / Internet Protocol).
+
+Step by Step flow: How communication happens
+
+    Phone → Data Packets → Nearest Tower → ISP → DNS → Destination Server
+
+- The sender’s computer or phone converts the message into small data packets.
+- These packets travel through network mediums — cables, Wi-Fi, or satellites.
+- Packets pass through a nearest cell tower or router, which forwards them to your ISP (Jio, Airtel, BSNL, etc.).
+- The ISP checks the DNS (Domain Name System) to find the correct IP address of the destination website or server.
+- Data travels through multiple routers and networks until it reaches the destination device.
+- At the destination, packets are reassembled to form the original message or file — just like putting together pieces of a puzzle.
+
+                                    User Device
+                                        ↓
+                                    Packets
+                                        ↓
+                                    Nearest Tower / Router
+                                        ↓
+                                    ISP (Jio / Airtel)
+                                        ↓
+                                    DNS Lookup → Finds IP of website
+                                        ↓
+                                    Internet Backbone (Routers, Servers)
+                                        ↓
+                                    Destination Server (e.g., WhatsApp / Google)
+                                        ↓
+                                    Response Sent Back → Reassembled into Message
+
+Example 1 – Sending a WhatsApp Message
+You send “Hi” from your phone → message is converted into packets → travels to nearest tower → ISP → DNS finds WhatsApp’s IP → 
+packets reach WhatsApp’s server → your friend receives the message.
+
+Example 2 – Visiting Google.com
+You type “google.com” → browser asks DNS for IP → gets 142.250.xxx.xxx → sends packets via ISP → reaches Google’s data center → 
+receives web page data → page displayed on your screen.
+
+Que -3 How data travels across the world?
+Ans -3 Data doesn’t fly randomly in the air — it moves through:
+
+- Fiber optic submarine cables laid under the ocean which connect different countries and continents.
+- Satellites for remote or wireless communication.
+- Routers work like traffic police, deciding the route of data packets.
+- Switches connect devices inside a local network (e.g, your home Wifi).
+
+Example -1
+So, when you access a website in the U.S. from India, your data literally travels across oceans and continents through 
+high-speed networks in milliseconds.
+
+Example -2
+A WhatsApp message sent from INdia to the USA moves through fiber optic undersea cables. If one route fails, the internet 
+automatically finds an alternate path.
+
+
+-------------- | Just for Knowledge | -----------------
+
+Key Components for clearity -
+
+Term	             Meaning
+ISP                 (Internet Service Provider)	Company that gives you Internet access (e.g., Jio, Airtel).
+
+DNS                 (Domain Name System) which Converts website names (like google.com) into IP addresses. A human-friendly way to access websites (e.g - google.com) instead of remebering numbers.
+                    Process Ex -Type google.com in the browser -> DNS translate into its IP -> 142.250.77.206 -> Your ISP uses this IP to connect you to Google's server. 
+                    Note - Without DNS, we would have to remeber long IP numbers for e ery single website.
+
+IP Address	        The numeric and unique identifier for every device on the network. (e.g., IPv4 – 192.168.1.1, IPv6 – 2401:4900::1)
+
+MAC Address	        Physical address of your network card (unique hardware ID) just like Aadhar card for your device permanent and unique.
+
+Router	            Routers analyze the network and decide the fastest and safest path for data packets to travel across the internet.
+
+Packet	            Small piece of data sent over the network.
+
+Protocols That Make It Happen -
+Protocol	                Full Form	                            Role
+TCP	                Transmission Control Protocol	        Ensures reliable, ordered delivery of packets. Used in web browsing, email, etc.
+UDP	                    User Datagram Protocol	            Faster, but doesn’t guarantee delivery. Used in streaming, gaming, video calls.
+IP	                        Internet Protocol	            Defines addressing and routing of packets.
+
+
+Que -4 What is the difference between IPv4 and IPv6?
+Ans -4 IPv4 is a 32-bit address system (e.g., 192.168.1.1) that supports about 4.3 billion unique addresses.
+       IPv6 is a 128-bit address system (e.g., 2401:db8::1) that supports trillions of addresses and offers better speed, security, and efficiency.
+
+✅ In short:
+    IPv4 → 32-bit, limited addresses
+    IPv6 → 128-bit, huge address space
+
+
+Que -5 Explain how DNS converts a domain name into an IP address.
+Ans -5 DNS (Domain Name System) translates a website’s domain name (like google.com) into its IP address so computers can locate 
+and connect to the correct server.
+
+Que -6 How ISP and DNS work together to deliver data?
+Ans -6 The ISP sends your request to a DNS server to find the website’s IP address, then routes your data through the Internet 
+to that destination and returns the response to your device.
+
+Que -7 History of Web (Web 1.0 to Web 3.0)?
+Ans -7 Evolution of the Web
+
+Web 1.0 (1990s - early 2000s)
+In the early stage of the internet, websties were static. They only contained fixed information, and users could only read the 
+content without interacting
+Example -
+    Early news websites or company information pages.
+
+Web 2.0 (2004 onwards)
+This era introduced user-generated content and social interaction. People could not only consume but also create, 
+share, and connect with others online.
+
+    - Rise of platforms like facebook, youtube, wikipedia and blogs.
+    - Main focus - community building, sharing and collaboration.
+
+Web 3.0 (Now and Future)
+The modern and future web is build on blockchain technology and decentraliztion. Data is no longer stored in a single company's 
+server but distributed across many computers.
+
+    - Users own their data and can also earn via tokens, NFTs, and smart contracts.
+    - Examples - Cryptocurrencies, decentralized apps (dApps), and Metaverse projects.
+
+Short version:-
+Version	Timeline	                Features
+Web 1.0	1990s	            Read-only web (static pages).
+Web 2.0	2000s	            Read–Write web (social media, interactivity).
+Web 3.0	Present–Future	    Decentralized, AI-driven, blockchain-based web.
+
+Que -8 How the ping Command Works?
+Ans -8 ping = Packet Internet Groper which is used to check connectivity between your computer and another device/server.
+
+How ping Working:-
+    - Sends a small packet using ICMP (Internet Control Message Protocol) to a target IP.
+    - Measures how long it takes to get a reply (round-trip time).
+    - Displays packet loss and delay → helps identify network issues.
+
+💻 Example: ping google.com
+
+Output shows:
+    Reply from 142.250.183.14 → Google’s IP
+    Time = 32 ms → latency
+
+Packets sent/received/lost statistics
+
+Que -9 What is the difference between Internet and WWW?
+Ans -9 Internet
+- The Internet is a global network of interconnected computers that communicate using TCP/IP.
+- Developed by U.S. Department of Defense (ARPANET) in the late 1960s.
+- Transmits all kinds of data — emails, files, messages, VoIP, streaming, etc.
+- Uses TCP/IP, FTP, SMTP, ICMP, etc.
+- The Internet can exist without the Web.
+Example - Sending an email, video calling, or transferring files via FTP.
+
+WWW (World Wide Web)
+- The World Wide Web is a collection of websites and web pages accessible through the Internet.
+- Invented by Sir Tim Berners-Lee in 1990 at CERN.
+- Mainly deals with hyperlinked documents, media, and web content.
+- Uses HTTP/HTTPS for communication between browser and web servers.
+- The Web cannot exist without the Internet.
+Example - Browsing a site like https://www.google.com or https://www.github.com
+
+In short - The Internet is like a highway system — it connects cities (computers) around the world.
+The World Wide Web is like the vehicles and content traveling on that highway — websites, media, and documents.
+
+💡 Analogy
+Internet → Infrastructure (roads, cables, routers)
+WWW → Information service (websites, browsers)
+
+Que -10 What is the role of TCP/IP in data transmission?
+Ans -10
+- TCP/IP is the core communication protocol of the Internet.
+- TCP ensures reliable delivery of data by breaking it into packets, checking for errors, and reassembling it at the destination, while 
+  IP handles addressing and routing those packets to the correct destination.
+
+✅ In short:
+    TCP = reliability & order
+    IP = addressing & routing
