@@ -198,3 +198,303 @@ Ans -10
 ✅ In short:
     TCP = reliability & order
     IP = addressing & routing
+
+Que -11 Difference between TLD (Top Level Domain), SLD (Second Level Domain) and subdomain?
+Ans -11 
+Type	                                       Example (www.google.com)	                                       Description
+
+TLD (Top-Level Domain)	                                .com	                            The last part of a domain name — represents the 
+                                                                                            domain category or country (e.g., .com, .org, .in).
+
+SLD (Second-Level Domain)	                            google	                            The main name chosen by the owner — identifies 
+                                                                                                        the organization or website.
+
+Subdomain	                                             www	                                A prefix added before the main domain to organize 
+                                                                                            sections or services (e.g., blog.google.com, mail.google.com).
+
+✅ In short:
+
+TLD = domain ending (.com)
+SLD = main domain name (google)
+Subdomain = prefix for sections (www or blog)
+
+Que -12 What are the different types of computer networks? Explain briefly.
+Ans -12 
+PAN (Personal Area Network) - Connects devices within a short range (a few meters).
+Example - Bluetooth between phone and earbuds.
+
+LAN (Local Area Network) - Covers a small area like an office or building.
+Example - Office or school network.
+
+CAN (Campus Area Network) - Connects multiple LANs within a campus.
+Example - University campus network.
+
+MAN (Metropolitan Area Network) - Covers a large area like a city.
+Example - City-wide Wi-Fi or cable network.
+
+WAN (Wide Area Network) - Connects multiple MANs or LANs across countries.
+Example - The Internet.
+
+VPN (Virtual Private Network) - Creates a secure, encrypted network over the Internet.
+Example - Remote office connection.
+
+✅ In short:
+
+PAN < LAN < CAN < MAN < WAN (in coverage area)
+VPN provides secure communication over any of these networks.
+
+
+Que -13 What are the different types of network topologies? Explain briefly.
+Ans -13 Network topology refers to the arrangement or structure of how computers and devices are connected in a network.
+There are several types of network topologies:-
+
+BUS Topology:
+   → All devices share a single central cable (called the bus).
+   → Data travels in both directions.
+   → Simple and low cost, but if the main cable fails, the network stops.
+   Example: Early Ethernet networks.
+
+   [PC1] --- [PC2] --- [PC3] --- [PC4]
+           |
+        Single Cable (Bus)
+
+
+RING Topology
+   → Devices are connected in a circular path.
+   → Data travels in one direction (uni-directional).
+   → Easy to install but one node failure affects the whole network. 
+   Example: Like a relay race — each runner (computer) passes the baton (data) to the next one in the loop.
+
+   [PC1] --- [PC2] --- [PC3] --- [PC4]
+   |                                 |
+   +---------------------------------+
+
+- Each device connects to two others forming a circle. Data moves in one direction.
+
+ STAR Topology
+   → All devices are connected to a central hub or switch.
+   → If one device fails, others continue working.
+   → Easy to manage and expand, but hub failure brings the network down.
+   Example: Most office LANs.
+
+           [PC1]
+             |
+[PC2] --- [HUB/SWITCH] --- [PC3]
+             |
+           [PC4]
+
+- All devices connect to a central hub. If one PC fails, others are unaffected.
+
+
+ MESH Topology
+   → Every device is connected to every other device.
+   → Very reliable and fast, but expensive and complex.
+   Example: Internet backbone networks.
+
+          [PC1]------[PC2]
+            |\       /|
+            | \     / |
+            |  \   /  |
+          [PC3]-----[PC4]
+
+- Every device is connected to every other device. Very reliable but expensive.
+
+
+ TREE Topology
+   → Combination of **Star + Bus** topologies.
+   → Used in large networks where groups of star networks are connected to a bus.
+   Example: School or organizational networks.
+
+          [MAIN HUB]
+             /   \
+         [SW1]   [SW2]
+         / | \    / | \
+      PC1 PC2 PC3 PC4 PC5
+
+- Hierarchical structure combining multiple star networks on a single bus backbone.
+
+HYBRID Topology
+   → Combination of two or more different topologies.
+   → Flexible and scalable.
+   Example: LAN with both Star and Ring networks.
+
+      [Ring Network]         [Star Network]
+     [PC1]-[PC2]-[PC3] --- [HUB]---[PC4]---[PC5]
+
+- Mix of different topologies (e.g., ring + star) used for flexibility.
+
+ POINT-TO-POINT Topology
+   → Direct connection between two devices.
+   → Simple, fast, and secure.
+   Example: Computer-to-printer or router-to-modem connection.
+
+    [PC1] <--------> [PC2]
+
+- Direct connection between two devices. Fast and secure.
+
+
+
+ DAISY CHAIN Topology
+   → Devices are connected in a series (like a chain).
+   → Data passes through each device until it reaches the destination.
+   → Easy to add devices but failure in one link affects the chain.
+   Example - Like decorative lights — if one bulb (device) fails, it can break the flow for all the others in the chain.
+
+   [PC1] --> [PC2] --> [PC3] --> [PC4]
+
+- Devices connected one after another in a series. Easy to add but single failure affects all.
+
+In short 
+   BUS   →  Single shared cable
+   RING  →  Circular connection
+   STAR  →  Central hub or switch
+   MESH  →  Fully interconnected nodes
+   TREE  →  Combination of Star + Bus
+   HYBRID→  Mix of multiple topologies
+   P2P   →  Direct link between two devices
+   DAISY →  Devices linked in series
+
+Que -14 Explain OSI Model
+Ans -14 OSI Model (Open Systems Interconnection Model)
+
+The OSI Model is a conceptual framework that defines how data is transmitted between two devices over a network in 7 layers.
+Each layer has a specific function and communicates with the layers directly above and below it.
+
+Purpose:
+- To standardize network communication.
+- To help different systems and devices communicate regardless of manufacturer.
+- To troubleshoot network issues layer by layer.
+
+Explaination of each layer
+
+Application Layer (Layer 7)
+    Function: User interface — provides network services to end users.
+    Examples: Web browsers, Email clients (HTTP, HTTPS, FTP, SMTP, DNS).
+    Real-life Example: You open a website in Chrome — that’s the application layer in action.
+
+Presentation Layer (Layer 6)
+    Function: Formats, compresses, and encrypts data before transmission.
+    Examples: JPEG, MP3, MPEG, SSL/TLS (for data encryption).
+    Real-life Example: Data is encrypted via HTTPS before being sent over the Internet.
+
+Session Layer (Layer 5)
+    Function: Establishes, manages, and terminates communication sessions.
+    Examples: APIs, Remote login (NetBIOS, PPTP, SIP).
+    Real-life Example: When you log into a Zoom meeting, the session layer maintains your connection.
+
+Transport Layer (Layer 4)
+    Function: Ensures reliable data transfer between systems using segmentation and flow control.
+    Protocols: TCP (reliable), UDP (fast).
+    Real-life Example:
+        TCP → Downloading a file from a website.
+        UDP → Video streaming or online gaming.
+
+Network Layer (Layer 3)
+    Function: Handles logical addressing and routing of data packets.
+    Protocol: IP (IPv4, IPv6), ICMP.
+    Devices: Routers.
+    Real-life Example: Router decides the best path to send data from Delhi to New York.
+
+Data Link Layer (Layer 2)
+    Function: Transfers data frames between devices on the same network. Handles MAC addresses and error detection.
+    Protocols: Ethernet, PPP, ARP.
+    Devices: Switches, bridges.
+    Real-life Example: Your computer’s MAC address identifies it to your local network.
+
+Physical Layer (Layer 1)
+    Function: Transmits raw bits (0s and 1s) over physical media.
+    Examples: Cables, connectors, switches, hubs, Wi-Fi signals.
+    Real-life Example: The Ethernet cable or Wi-Fi signal that carries your data.
+
+Data Flow through OSI layers
+    Sender Side:  Application → Presentation → Session → Transport → Network → Data Link → Physical
+    Receiver Side: Physical → Data Link → Network → Transport → Session → Presentation → Application
+
+In short:
+    The OSI Model divides the data communication process into 7 layers, each responsible for a specific task — from physical transmission to user interaction — making global communication seamless and standardized.
+
+🍔 Example: OSI Model Working in Case of Zomato
+        When you open the Zomato app or website to order food, the OSI layers work together to deliver your request and show the restaurant data.
+
+Step by step layer working 
+
+1️⃣ Application Layer (Layer 7)
+   - You open the Zomato app and search for "Pizza".
+   - The app sends your search request using protocols like HTTPS and DNS.
+   - Example: HTTPS://www.zomato.com
+
+2️⃣ Presentation Layer (Layer 6)
+   - Your request data is encrypted using SSL/TLS for secure transmission.
+   - Formats JSON or HTML data that the app and server understand.
+
+3️⃣ Session Layer (Layer 5)
+   - Manages your login session on Zomato.
+   - Keeps the connection active between your app and Zomato's server
+     while you browse menus or add items to the cart.
+
+4️⃣ Transport Layer (Layer 4)
+   - Breaks your request into smaller packets using TCP (for reliable delivery).
+   - Ensures all packets reach the server completely and in correct order.
+
+5️⃣ Network Layer (Layer 3)
+   - Each packet is assigned source (your device IP) and destination (Zomato’s server IP).
+   - Routers on the internet find the best path to reach Zomato’s data center.
+
+6️⃣ Data Link Layer (Layer 2)
+   - Converts packets into data frames using your device’s MAC address.
+   - Switches and routers use MAC addresses to move data inside local networks.
+
+7️⃣ Physical Layer (Layer 1)
+   - Actual transmission of bits (0s and 1s) happens via Wi-Fi or mobile network.
+   - Your phone sends signals through air or cables to reach your ISP’s router.
+
+🧠 When Data Returns (Response from Zomato Server)
+        The same process happens in reverse order:-
+            Zomato Server → Physical → Data Link → Network → Transport → Session → Presentation → Application → You
+
+Finally, you see the restaurant list, prices, and offers on your app screen.
+
+In short:
+
+The OSI Model allows your Zomato app and Zomato’s servers to communicate smoothly —
+from your Wi-Fi signal (Physical Layer) up to your app’s user interface (Application Layer) —
+ensuring secure, reliable, and properly formatted food ordering experience.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Client-Server Architecture:
+
+- What is Client-Server Model.
+- Difference between Client (browser) and Server (the computer hosting your website).
+- How HTTP request and response cycle works (how browser talk to server).
+- What happens when you visit a website.
+- Difference between Front-end and Back-end (Front-end vs Back-end).
+- What are Static Websites and Dynamic Websites.
+- What is web hosting and how it works.
+
+
+
+- Client Server Architecture 
+- Peer to peer Architecture
+
+- Protocols - (set of rules)
+  - HTTP and HTTPS
+  - TCP
+  SSL and TSL
+  IP and 
+  TCP - 3 way handshake
+  UDP
+
+
+
+
