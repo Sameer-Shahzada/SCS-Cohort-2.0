@@ -18,9 +18,7 @@ Year	        Event
 Rapid evolution: The Internet evolved rapidly with advancements in cloud computing, IoT (Internet of Things), 
 Web 3.0, artificial intelligence (AI), and blockchain technologies, shaping the highly connected digital world we live in today.
 
-Que -2 How Computers Send Data All Over the World?
-                OR
-       How computer communicate with each other?
+Que -2 How computer communicate with each other?
 Ans -2 Every computer connected to the Internet has a unique IP address, just like a phone number.
 When two devices communicate, they follow a set of rules called protocols to ensure smooth data exchange.
 The most common and foundational protocol used worldwide is TCP/IP (Transmission Control Protocol / Internet Protocol).
@@ -60,8 +58,11 @@ Example 2 – Visiting Google.com
 You type “google.com” → browser asks DNS for IP → gets 142.250.xxx.xxx → sends packets via ISP → reaches Google’s data center → 
 receives web page data → page displayed on your screen.
 
-Que -3 How data travels across the world?
-Ans -3 Data doesn’t fly randomly in the air — it moves through:
+Que -3 How Computers Send Data All Over the World
+                 OR
+       How data travels across the world?
+Ans -3
+Data doesn’t fly randomly in the air — it moves through:
 
 - Fiber optic submarine cables laid under the ocean which connect different countries and continents.
 - Satellites for remote or wireless communication.
@@ -75,6 +76,15 @@ high-speed networks in milliseconds.
 Example -2
 A WhatsApp message sent from INdia to the USA moves through fiber optic undersea cables. If one route fails, the internet 
 automatically finds an alternate path.
+
+                            OR
+Short Answer:
+    - Focuses on the physical path and global infrastructure that carry data.
+    - Involves routers, ISPs, submarine cables, and satellites.
+    - Explains how data physically travels across countries and continents.
+
+Example:
+    How your request to google.com travels through undersea cables from India to U.S. servers.
 
 
 -------------- | Just for Knowledge | -----------------
@@ -462,15 +472,7 @@ ensuring secure, reliable, and properly formatted food ordering experience.
 
 
 
-
-
-
-
-
-
-
-
-
+// Notes prepare from here take reference from SCS 2.0 notes and classes videos
 
 ### Client-Server Architecture:
 
@@ -481,7 +483,6 @@ ensuring secure, reliable, and properly formatted food ordering experience.
 - Difference between Front-end and Back-end (Front-end vs Back-end).
 - What are Static Websites and Dynamic Websites.
 - What is web hosting and how it works.
-
 
 
 - Client Server Architecture 
