@@ -474,15 +474,432 @@ ensuring secure, reliable, and properly formatted food ordering experience.
 
 // Notes prepare from here take reference from SCS 2.0 notes and classes videos
 
-### Client-Server Architecture:
+----------------------------------------- | Client-Server Architecture | --------------------------------------------------------
+Que -15 What is Client-Server Model?
+Ans -15 The Client–Server Model is a network architecture where:
+    Client = requests a service
+    Server = provides that service
 
-- What is Client-Server Model.
-- Difference between Client (browser) and Server (the computer hosting your website).
-- How HTTP request and response cycle works (how browser talk to server).
-- What happens when you visit a website.
-- Difference between Front-end and Back-end (Front-end vs Back-end).
-- What are Static Websites and Dynamic Websites.
-- What is web hosting and how it works.
+It is a centralized communication system in which multiple clients (users/devices) connect to a server to 
+access resources like data, files, APIs, or applications.
+
+✔️ Simple Explanation
+The client sends a request → the server processes it → sends back a response.
+Real-World Examples:
+    You open Zomato → your phone (client) requests restaurant data → Zomato server responds.
+    You visit google.com → your browser (client) sends a request → Google’s servers reply.
+
+---------------------------------------------------
+# Just for Knowledge
+✔️ Examples of Clients
+Clients are devices or applications that request services:
+Web browser (Chrome, Firefox)
+Mobile apps (Zomato, Instagram, Paytm)
+Laptop or PC
+Smartphones
+Smart TVs
+API clients like Postman
+IoT devices requesting cloud data
+
+✔️ Examples of Servers
+Servers are powerful systems that provide services:
+Web servers (Apache, Nginx)
+Application servers (Node.js, Django, Spring Boot)
+Database servers (MySQL, PostgreSQL, MongoDB)
+File servers
+Mail servers
+Cloud servers (AWS, Azure, GCP)
+Authentication servers (Login/Signup services)
+
+Que -16 Difference between Client (browser) and Server (the computer hosting your website)?
+Ans -16 Client (Browser)
+- Sends requests for webpages, data, images, APIs.
+- Runs on user’s device (phone, laptop, PC).
+- Displays web pages to the user.
+- Examples: Chrome, Firefox, Safari, Edge.
+- Cannot function without a server to respond.
+- Handles UI/UX, rendering HTML/CSS/JS.
+- Works on client-side.
+
+Server (Website Host)
+- Processes incoming requests and sends responses back.
+- Runs on a powerful remote computer/data center.
+- Stores the website’s files, databases, APIs, and logic.
+- Examples: Apache, Nginx, Node.js server, AWS EC2, GCP server.
+- Can run without clients, but serves only when clients request.
+- Handles backend processing, authentication, databases.
+- Works on server-side.
+
+✔️ Simple Explanation
+The client (browser) asks for information,
+while the server provides that information.
+
+
+✔️ Real Example
+You type www.amazon.in in Chrome → Client request
+Amazon’s server receives the request → fetches products → Server response
+Browser displays the page.
+
+Que - How HTTP request and response cycle works (how browser talk to server).
+
+Ans - The communication between client and server happens in a cycle known as the HTTP request-response cycle.
+
+
+Step by Step Flow
+
+1. You enter a URL in the browser  
+   (Example: https://www.amazon.in)
+
+2. Browser sends a DNS request  
+   → DNS converts domain → IP address of the server
+
+3. Browser creates an HTTP/HTTPS request  
+   → “Give me the homepage of amazon.in”
+
+4. Browser sends this request to the server  
+   through your ISP (Jio, Airtel, BSNL)
+
+5. Server receives the request  
+   → Processes it  
+   → Fetches data from database  
+   → Runs backend code (Node.js, Django, etc.)
+
+6. Server creates an HTTP response  
+   → HTML, CSS, JS, Images, Data (JSON)
+
+7. Response travels back to the browser  
+   using TCP/IP
+
+8. Browser receives the response  
+   → Renders the webpage on your screen
+
+
+📨 2. Structure of HTTP Request & Response
+HTTP Request Contains:
+
+- Method (GET, POST, PUT, DELETE)
+- URL (path)
+- Headers (User-Agent, Accept, Cookies)
+- Body (only in POST/PUT)
+
+HTTP Response Contains:
+- Status Code (200, 404, 500)
+- Headers (Content-Type, Cache-Control)
+- Body (HTML / JSON / any data)
+
+🔁 3. Full Request–Response Cycle (Super Simple)
+Client (Browser) → sends HTTP Request → Server
+Server → sends HTTP Response → Client (Browser)
+
+🧠 4. Simple Real-Life Example (Zomato)
+You open Zomato app
+↓
+App sends GET request → "Give me restaurant list"
+↓
+Zomato server processes request
+↓
+Server responds with JSON data of restaurants
+↓
+App displays the restaurant list
+
+📄 5. Text Diagram (For .txt Notes)
+
++-------------------+       HTTP Request        +-------------------+
+|    BROWSER        | ----------------------->  |      SERVER       |
+| (Client Side)     |                           | (Backend/API)     |
++-------------------+                           +-------------------+
+        ^                                               |
+        |                HTTP Response                  |
+        +-----------------------------------------------+
+
+
+✔️ In short
+
+Browser sends an HTTP request → Server processes it → Server sends an HTTP response → Browser displays the result.
+
+Que - What happens when you visit a website?
+Ans - (Example: You type www.google.com in the browser)
+
+✅ 1. You Enter the URL
+The process starts when you type a URL in the browser and press Enter.
+
+✅ 2. Browser Checks Cache
+Browser first checks if it already has the website saved in:
+- Browser cache
+- DNS cache
+- Cookies / Local storage
+
+If found → loads faster.
+If not → next step.
+
+✅ 3. DNS Lookup
+Browser asks DNS (Domain Name System) to convert the domain name (google.com) into an IP address (example: 142.250.xxx.xxx).
+
+DNS Servers:
+- Local DNS
+- ISP DNS
+- Google DNS (8.8.8.8)
+- Cloudflare DNS (1.1.1.1)
+
+✅ 4. Browser Creates HTTP/HTTPS Request
+The browser prepares a request:
+- Method → GET (usually)
+- Path → /
+- Headers → User-Agent, Cookies
+- Body → (empty for GET)
+
+✅ 5. Request Goes Through Your ISP
+The request travels through:
+- Your Phone/Laptop → Wi-Fi/Mobile Network
+- Router
+- ISP (Jio, Airtel)
+- Internet backbone
+
+
+✅ 6. Request Reaches the Web Server
+The server hosting the website:
+- Receives the request
+- Processes it
+- Runs backend code (Node.js, PHP, Python, Java)
+- Communicates with database
+
+
+✅ 7. Server Prepares a Response
+Server sends back:
+- Status Code (200 OK)
+- Headers
+- HTML + CSS + JavaScript
+- Images, JSON, etc.
+
+
+✅ 8. Browser Renders the Webpage
+Browser:
+
+- Parses HTML
+- Downloads and loads CSS
+- Executes JavaScript
+- Builds the webpage structure (DOM)
+- Finally displays the page to you
+
+
+📄 Text Diagram (Perfect for .txt Notes)
+
+You type URL
+      ↓
+Browser checks cache
+      ↓
+DNS converts domain → IP
+      ↓
+Browser sends HTTP/HTTPS request
+      ↓
+Request goes through ISP
+      ↓
+Server receives the request
+      ↓
+Server sends back response (HTML/CSS/JS)
+      ↓
+Browser renders the webpage
+      ↓
+Website appears on screen
+
+
+✔️ In short
+
+When you visit a website:
+Browser → DNS → Server → Response → Browser Displays Page.
+
+Short answer (perfect for interviews)
+
+When you enter a website URL, the browser first checks its cache.
+If not found, it asks DNS to convert the domain name into an IP address.
+Then the browser sends an HTTP/HTTPS request to the server using that IP.
+The server processes the request, fetches data, and sends back an HTTP response.
+The browser receives the response and renders the webpage on your screen.
+
+In one line:
+👉 Browser → DNS → Server → Response → Browser renders page.
+
+Que - Difference between Front-end and Back-end (Front-end vs Back-end)?
+Ans - 🔥 Front-end vs Back-end
+⭐ Front-end (Client-Side)
+
+Everything the user sees and interacts with in a website or app.
+
+✔️ Responsibilities:
+- UI/UX design
+- Layout, buttons, forms, animations
+- Displaying data from the backend
+
+✔️ Technologies:
+- HTML, CSS, JavaScript
+- Frameworks: React, Angular, Vue
+
+✔️ Runs On:
+- User’s device (browser or mobile app)
+
+✔️ Examples:
+- Login page UI
+- Zomato restaurant cards
+- Animations, product listings
+- Buttons, navigation menu
+
+⭐ Back-end (Server-Side)
+
+Everything that happens behind the scenes — logic, database, authentication, APIs.
+
+✔️ Responsibilities:
+- Server logic
+- User authentication
+- Storing/retrieving data
+- APIs
+- Security & performance
+
+✔️ Technologies:
+- Node.js, Express, Java, Python, Django, Spring Boot, PHP
+- Databases: MySQL, PostgreSQL, MongoDB
+
+✔️ Runs On:
+- Server or cloud (AWS, GCP, Azure)
+
+✔️ Examples:
+- Verifying login credentials
+- Storing orders in database
+- Fetching products from DB
+- Sending response to front-end
+
+📊 Front-end vs Back-end: Quick Table
+Feature   	    Front-end	            Back-end
+Runs on	        Browser	                Server
+Focus	        UI/UX	                Logic + Database
+Languages	    HTML, CSS, JS	        Node, Java, Python, PHP
+Works with	    Users	                Front-end + Database
+Example	        Homepage design	        Login verification
+
+✔️ In Short
+Front-end = Looks + Interaction
+Back-end = Logic + Database + APIs
+
+
+Short answer 
+Frontend (Client-Side)
+- The visible part of a website or application.
+- Built using HTML, CSS, JavaScript.
+- Focuses on UI/UX (buttons, forms, visuals, designs)
+Examples - The login form you see on your screen.
+
+Backend (Server-Side)
+
+- The hidden part of the system that runs on the server.
+- Handles logic, authentication, database operations, APIs.
+Example - Checking whether your login credentials are correct.
+
+Que - What are Static Websites and Dynamic Websites?
+Ans - ⭐ Static Website
+
+A static website contains fixed content that does not change unless a developer manually edits the code.
+
+✔️ Features:
+- Shows the same content to everyone.
+- Built using HTML, CSS, JavaScript only
+- No database
+- Fast loading but limited in iteractivity.
+- Simple to host and maintain
+
+✔️ Examples:
+- Portfolio websites, Company introduction pages,  Documentation websites, Landing pages.
+
+
+✔️ Real-life Example:
+- portfolio.html → Always shows the same information
+
+⭐ Dynamic Website
+A dynamic website changes content automatically based on user interaction, database data, or backend logic.
+
+✔️ Features:
+- Different content for different users
+- Requires a backend + database integration.
+- Built using server-side technologies
+- More personalized and interactive
+
+✔️ Examples:
+- E-commerce websites (Amazon, Flipkart)
+- Social media platforms (Instagram, Facebook)
+- Food delivery apps (Zomato, Swiggy)
+- News websites
+
+✔️ Real-life Example:
+amazon.in → Shows different products for each user
+
+✔️ In short
+
+Static website = Same for everyone, no backend.
+Dynamic website = Different for everyone, powered by backend + database.
+
+
+Que- What is web hosting and how it works?
+Ans- Web hosting is a service that allows you to store your website’s files (HTML, CSS, JS, images, videos, backend code, database) on a server so that anyone on the Internet can access your website.
+
+In simple words:
+👉 Hosting = Putting your website on a computer (server) that runs 24×7 online with the help of hosting providers such as Hoistinger, AWS, GoDaddy etc.
+    Without hosting, your site cannot be seen on the internet.
+
+When someone types your domain (example: www.amazon.in), the hosting server sends back your website files to the user’s browser.
+
+How Web Hosting Works?
+Here’s the step-by-step flow:
+
+1. You upload your website files to a hosting server.
+   (Example: Using cPanel, FTP, Git, or cloud deployment)
+
+2. You connect your domain (example: mysite.com) to the hosting server.
+3. A user types your domain in the browser.
+4. DNS converts the domain → IP address of the hosting server.
+5. Browser sends HTTP/HTTPS request to the hosting server.
+6. Hosting server receives the request, fetches website files or backend output.
+7. Server sends back HTML, CSS, JS, images, or API response.
+8. Browser renders the webpage on the user’s screen.
+
+
+Text Diagram
+
+User Browser
+     ↓
+Types Domain Name
+     ↓
+DNS → Gets Server IP
+     ↓
+HTTP Request Sent
+     ↓
+Web Hosting Server
+     ↓
+Sends Website Files / API Data
+     ↓
+Browser Renders Page
+
+⭐ Types of Web Hosting (Short and Common)
+
+1. Shared Hosting     – Multiple websites share one server (cheapest but slower),   
+2. VPS Hosting        – virtual private server which is divided or dedicated for one website, more control  
+3. Dedicated Hosting  – full physical server for one user  
+4. Cloud Hosting      – scalable and flexible hosting, on-demand (AWS, GCP, Azure)  
+5. Managed Hosting    – hosting + maintenance handled by provider  
+
+✔️ Real-Life Example
+
+- Your portfolio website is uploaded on Netlify → static hosting
+- Your Node.js app is deployed on Render / Railway / AWS EC2 → dynamic hosting
+- Amazon, Zomato, Flipkart → hosted on cloud platforms like AWS
+
+✔️ In short
+Web hosting = Renting space on a server so your website stays online and accessible to everyone.
+
+### 3. Internet Protocols:
+
+- What is TCP protocol and why is widely used
+- How Connection is established using TCP (3 Way handshake)
+- What is UDP and why its used for fast communication
+- How UPD establishes connection
+- Difference between TCP and UPD
 
 
 - Client Server Architecture 
