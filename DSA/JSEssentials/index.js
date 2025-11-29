@@ -45,38 +45,143 @@
 
 //------------------------------------------------------------------------//
 
-// print numbers 
+// print numbers
 
-import promptSync from 'prompt-sync';
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const start = Number(prompt("Enter start number - "));
+// const end = Number(prompt("Enter end number - "));
+
+// function printNumbers(startNum, endNum) {
+
+//     // validate start number
+//     if (isNaN(startNum) || startNum < 0) {
+//         console.log("Start number is invalid");
+//         return;
+//     }
+
+//     // validate end number
+//     if (isNaN(endNum) || endNum < 0) {
+//         console.log("End number is invalid");
+//         return;
+//     }
+
+//     // validate range
+//     if (startNum > endNum) {
+//         console.log("Start number cannot be greater than end number");
+//         return;
+//     }
+
+//     // printing numbers
+//     for (let i = startNum; i <= endNum; i++) {
+//         console.log(i);
+//     }
+// }
+
+// printNumbers(start, end);
+//------------------------------------------------------------------------//
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// let password = "Sameer123";
+
+// const userPass = prompt("Enter your password: ");
+// function checkPassword(userPassword) {
+//   if (password === userPassword) {
+//     console.log("matched");
+//   } else {
+//     console.log("not-matched");
+//   }
+// }
+// checkPassword(userPass);
+
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// let attemps = 0;
+// let unlocked = false;
+// let pass = "sameer";
+// let password = prompt("Enter your password: ");
+
+// attemps++;
+
+// while(password !== pass) {
+//     if(attemps === 3) {
+//         console.log("Account locked due to multiple failed attempts");
+//         break;
+//     }
+//     password = prompt("Incorrect password. Try again: ");
+//     if(password === pass) {
+//         console.log("Password matched. Access granted.");
+//         unlocked = true;
+//         break;
+//     }
+//     attemps++;
+// }
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// let attemp = 0;
+// let systemPassword = "sameer";
+// let userPassword = prompt("Enter your password: ");
+// attemp++;
+
+// while(userPassword !== systemPassword) {
+//     if(attemp === 3) {
+//         console.log("Account locked due to multiple failed attempts");
+//         break;
+//     }
+//     (userPassword === systemPassword) ? console.log("Password matched. Access granted.") : console.log("Incorrect password. Access denied.");
+
+//     userPassword = prompt("Enter your password: ");
+//     attemp++;
+
+// }
+
+
+import promptSync from "prompt-sync";
 const prompt = promptSync();
 
-const start = Number(prompt("Enter start number - "));
-const end = Number(prompt("Enter end number - "));
+let balance = 1000;
+let attempts = 0;
 
-function printNumbers(startNum, endNum) {
+while (balance > 0 && attempts < 3) {
+  const withdraw = Number(prompt("Enter withdrawal amount: "));
 
-    // validate start number
-    if (isNaN(startNum) || startNum < 0) {
-        console.log("Start number is invalid");
-        return;
-    }
+  // Input validation
+  if (isNaN(withdraw) || withdraw <= 0) {
+    console.log("Invalid amount. Enter a positive number.");
+    continue; // Does not count as an attempt
+  }
 
-    // validate end number
-    if (isNaN(endNum) || endNum < 0) {
-        console.log("End number is invalid");
-        return;
-    }
+  // Check if sufficient balance exists
+  if (withdraw > balance) {
+    console.log("Insufficient balance. Withdrawal failed.");
+    attempts++; // This counts as an attempt
+    continue;
+  }
 
-    // validate range
-    if (startNum > endNum) {
-        console.log("Start number cannot be greater than end number");
-        return;
-    }
+  // Successful withdrawal
+  balance -= withdraw;
+  console.log(`Withdrawal successful. Remaining balance: ${balance}`);
 
-    // printing numbers
-    for (let i = startNum; i <= endNum; i++) {
-        console.log(i);
-    }
+  attempts++; // Only successful / attempted withdrawal counts
 }
 
-printNumbers(start, end);
+if (balance === 0) {
+  console.log("Account balance reached zero. No more withdrawals allowed.");
+}
+
+if (attempts >= 3) {
+  console.log("Maximum attempts reached. Try again later.");
+}
+
+console.log(`Transaction ended. Final balance: ${balance}`);
+
+
+
+
