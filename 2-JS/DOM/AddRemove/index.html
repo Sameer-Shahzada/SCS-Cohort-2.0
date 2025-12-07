@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Remix icons for small icons on buttons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Friends — Add / Remove</title>
+</head>
+<body>
+  <main class="container" id="friendList" aria-live="polite">
+    <header class="topbar">
+      <div class="title">
+        <h1>Friends</h1>
+        <p class="subtitle">Add or remove people from your list</p>
+      </div>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search names..." aria-label="Search friends" />
+      </div>
+    </header>
+
+    <section class="cards" role="list">
+      <article class="card" role="listitem">
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">AA</div>
+          <div>
+            <h3 class="name">Ashhar Ali</h3>
+            <p class="muted">Frontend Engineer</p>
+          </div>
+        </div>
+        <div>
+          <button class="action" data-state="add" aria-pressed="false" type="button">
+            <i class="ri-user-add-line icon"></i>
+            <span class="label">Add Friend</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">AA</div>
+          <div>
+            <h3 class="name">Azeem Ansari</h3>
+            <p class="muted">Product Designer</p>
+          </div>
+        </div>
+        <div>
+          <button class="action" data-state="add" aria-pressed="false" type="button">
+            <i class="ri-user-add-line icon"></i>
+            <span class="label">Add Friend</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">AK</div>
+          <div>
+            <h3 class="name">Adil Khan</h3>
+            <p class="muted">Backend Dev</p>
+          </div>
+        </div>
+        <div>
+          <button class="action" data-state="add" aria-pressed="false" type="button">
+            <i class="ri-user-add-line icon"></i>
+            <span class="label">Add Friend</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="card" role="listitem">
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">MS</div>
+          <div>
+            <h3 class="name">Mohd Sameer</h3>
+            <p class="muted">Instrumentation Engineer</p>
+          </div>
+        </div>
+        <div>
+          <button class="action" data-state="add" aria-pressed="false" type="button">
+            <i class="ri-user-add-line icon"></i>
+            <span class="label">Add Friend</span>
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
