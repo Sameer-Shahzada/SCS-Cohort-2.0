@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Piano</title>
+  </head>
+  <body>
+    <main>
+      <section class="read-script" aria-hidden="true">
+        <h2 style="margin-bottom: 6px; font-weight:600;"> 🎹 Virtual Piano Instructions</h2>
+        <p style="opacity:0.9;">
+          Play keys notes using your mouse, touch, or keyboard.
+        </p>
+        <hr />
+
+        <p style="opacity:0.85; margin-top:6px;">
+          Use <strong>◀︎ Left / Right ▶︎ Arrow</strong> keys or the navigation buttons
+          to switch octaves.
+        </p>
+        <hr />
+
+        <p style="opacity:0.85; margin-top:6px;">
+          Press, click, or touch any key — it will play the sound and blink with
+          visual feedback.
+        </p>
+      </section>
+
+      <div class="controls-row">
+        <button class="nav-btn left" id="left" aria-label="Previous keys">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+
+        <div
+          class="piano-wrapper"
+          role="application"
+          aria-label="Virtual piano"
+        >
+          <div class="piano" id="piano" tabindex="0"></div>
+        </div>
+
+        <button class="nav-btn right" id="right" aria-label="Next keys">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
+      </div>
+
+      <div class="status-row">
+        <div class="octave-label">
+          Octave: <span id="octaveDisplay">3</span>
+        </div>
+        <div
+          class="progress-wrap"
+          title="Sample loading progress"
+          aria-hidden="false"
+        >
+          <div id="loadProgress" class="progress">
+            <div
+              id="loadProgressBar"
+              class="progress-bar"
+              style="width:0%"
+            ></div>
+          </div>
+          <div id="loadText" class="load-text">Loading samples...</div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
