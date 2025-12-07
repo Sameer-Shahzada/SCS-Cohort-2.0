@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium People Cards</title>
+
+  <!-- Remix icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">🎵</span>
+      <div>
+        <h1>Talent Showcase</h1>
+        <p class="lead">Premium profiles — browse, connect, message</p>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <input id="search" type="search" placeholder="Search people, skills..." aria-label="Search people" />
+      <select id="filterRole" aria-label="Filter by role">
+        <option value="">All roles</option>
+        <option>Designer</option>
+        <option>Developer</option>
+        <option>Data Analyst</option>
+        <option>Writer</option>
+        <option>Fitness Trainer</option>
+        <option>Photographer</option>
+        <option>Marketer</option>
+        <option>Chef</option>
+        <option>Psychologist</option>
+      </select>
+    </div>
+  </header>
+
+  <main id="grid" class="grid" aria-live="polite"></main>
+
+  <!-- option: simple toast slot -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
