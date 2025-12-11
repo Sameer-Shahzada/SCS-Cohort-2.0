@@ -1,0 +1,213 @@
+@font-face {
+  font-family: sf-pro;
+  src: url(./sf-pro-display_regular.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "sf-pro";
+}
+
+nav {
+  width: 100%;
+  height: 44px;
+  position: sticky;
+  top: 0;
+  background-color: #1d1d1f;
+  color: #d1d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 12.5px;
+}
+
+i {
+  margin-bottom: 4px;
+}
+
+section {
+  margin-bottom: 12px;
+  text-align: center;
+  padding-top: 55px;
+}
+
+#iphone-pro {
+  height: 88%;
+  background-image: url(https://www.apple.com/v/home/ci/images/heroes/iphone-17-pro/hero_iphone_17_pro__bknyzxfk2agi_largetall.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#iphone-pro h2 {
+  font-size: 56px;
+}
+
+#iphone-pro p {
+  margin-top: 6px;
+  font-size: 28px;
+  letter-spacing: 0.007em;
+}
+
+.links {
+  margin-top: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.links button {
+  font-size: 17px;
+  padding: 11px 21px;
+  border: 1px solid #2d85e0;
+  border-radius: 50px;
+}
+
+.learn-btn {
+  background-color: #2a77ec;
+  color: white;
+}
+
+.buy-btn {
+  background-color: transparent;
+  color: #2d85e0;
+}
+
+.buy-btn:hover {
+  background-color: #2a77ec;
+  color: white;
+}
+
+#iphone-air {
+  height: 88%;
+  background-image: url(https://www.apple.com/v/home/ci/images/heroes/iphone-air/hero_iphone_air__0gxyavihpiqu_largetall.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#iphone-air h2 {
+  font-size: 56px;
+}
+
+#iphone-air p {
+  max-width: 355px;
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.007em;
+  font-size: 28px;
+}
+
+#macbook-pro {
+  height: 88%;
+  background-image: url(https://www.apple.com/v/home/ci/images/heroes/macbook-pro-m5/hero_macbook_pro_m5__fjgmapbkxo2u_largetall.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#macbook-pro h2 {
+  font-size: 56px;
+}
+
+#macbook-pro p {
+  max-width: 355px;
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.007em;
+  font-size: 28px;
+}
+
+.group {
+  height: 75%;
+  display: flex;
+  gap: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.group p {
+  max-width: 295px;
+  margin-top: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 21px;
+}
+
+.group button {
+  font-size: 14px;
+  padding: 7px 15px;
+}
+
+#watch {
+  width: 100%;
+  background-image: url(https://www.apple.com/v/home/ci/images/promos/apple-watch-series-11/promo_apple_watch_series_11__b63hxviqvonm_large.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#watch h3 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+#watch span {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+#ipad {
+  width: 100%;
+  background-image: url(https://www.apple.com/v/home/ci/images/promos/ipad-pro/promo_ipad_pro__c529dk533k4m_large.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+#airpods {
+  width: 100%;
+  background-image: url(https://www.apple.com/v/home/ci/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_large.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#macbook-air {
+  width: 100%;
+  background-image: url(https://www.apple.com/v/home/ci/images/promos/macbook-air/promo_macbook_air__fqowrtnxewqe_large.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#trade {
+  width: 100%;
+  background-image: url(https://www.apple.com/v/home/ci/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#card {
+  width: 100%;
+  background-image: url(https://www.apple.com/v/home/ci/images/promos/apple-card/promo_apple_card__5cm7draujpey_large.jpg);
+  background-size: cover;
+  background-position: center;
+}
