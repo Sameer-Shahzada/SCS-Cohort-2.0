@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  gap: 14px;
+}
+main section {
+  height: 100%;
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: pointer;
+}
+main section:hover {
+  flex-grow: 2;
+}
+main section:nth-child(1) {
+  background-image: url(./assets/queen_of_japan.png);
+}
+main section:nth-child(2) {
+  background-image: url('./assets/gun_man.jpg');
+}
+main section:nth-child(3) {
+  background-image: url('./assets/queen_of_heart.jpg');
+}
+main section:nth-child(4) {
+  background-image: url('./assets/bloody.jpg');
+}
+main section:nth-child(5) {
+    background-image: url('./assets/black_rose.jpg');
+}
