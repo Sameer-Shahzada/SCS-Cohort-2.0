@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #0e1117;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 280px 280px 280px;
+  grid-template-rows: 1fr 280px;
+  grid-template-areas:
+    "section1 section2 section2 section2"
+    "section1 section3 section4 section5";
+  gap: 18px;
+}
+
+/* COMMON CARD STYLE */
+main section {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  background-size: cover;
+  background-position: center;
+
+  filter: saturate(1.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* HOVER EFFECT */
+main section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* NEW IMAGES + LOOK */
+#section1 {
+  grid-area: section1;
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400&auto=format&fit=crop");
+}
+
+#section2 {
+  grid-area: section2;
+  background-image: url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1400&auto=format&fit=crop");
+}
+
+#section3 {
+  grid-area: section3;
+  background-image: url("https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1400&auto=format&fit=crop");
+}
+
+#section4 {
+  grid-area: section4;
+  background-image: url("https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1400&auto=format&fit=crop");
+}
+
+#section5 {
+  grid-area: section5;
+  background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1400&auto=format&fit=crop");
+}
