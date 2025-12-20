@@ -97,7 +97,6 @@
 // }
 // checkPassword(userPass);
 
-
 // import promptSync from "prompt-sync";
 // const prompt = promptSync();
 
@@ -142,46 +141,93 @@
 
 // }
 
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// let balance = 1000;
+// let attempts = 0;
+
+// while (balance > 0 && attempts < 3) {
+//   const withdraw = Number(prompt("Enter withdrawal amount: "));
+
+//   // Input validation
+//   if (isNaN(withdraw) || withdraw <= 0) {
+//     console.log("Invalid amount. Enter a positive number.");
+//     continue; // Does not count as an attempt
+//   }
+
+//   // Check if sufficient balance exists
+//   if (withdraw > balance) {
+//     console.log("Insufficient balance. Withdrawal failed.");
+//     attempts++; // This counts as an attempt
+//     continue;
+//   }
+
+//   // Successful withdrawal
+//   balance -= withdraw;
+//   console.log(`Withdrawal successful. Remaining balance: ${balance}`);
+
+//   attempts++; // Only successful / attempted withdrawal counts
+// }
+
+// if (balance === 0) {
+//   console.log("Account balance reached zero. No more withdrawals allowed.");
+// }
+
+// if (attempts >= 3) {
+//   console.log("Maximum attempts reached. Try again later.");
+// }
+
+// console.log(`Transaction ended. Final balance: ${balance}`);
+
+// Find the greatest number among three numbers
+
+// Shop discount - description on graphic
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// // input from user
+// const amount = Number(prompt("Enter your amount: "));
+
+// let discount = 0;
+
+
+//   if (amount > 0 && amount <= 5000) {
+//     discount = 0;
+//   } else if(amount > 5000 && amount <=7000) {
+//     discount = 5;
+//   } else if(amount > 7000 && amount <= 9000) {
+//     discount = 10;
+//   } else {
+//     discount = 20
+//   }
+
+//   console.log('payable amount ' + (amount - (discount*amount)/100));
+
+
+// Shop discount - description on graphic
 
 import promptSync from "prompt-sync";
 const prompt = promptSync();
 
-let balance = 1000;
-let attempts = 0;
+// Input from user 
+let unit = Number(prompt("Enter unit: "));
+let amount = 0;
 
-while (balance > 0 && attempts < 3) {
-  const withdraw = Number(prompt("Enter withdrawal amount: "));
-
-  // Input validation
-  if (isNaN(withdraw) || withdraw <= 0) {
-    console.log("Invalid amount. Enter a positive number.");
-    continue; // Does not count as an attempt
-  }
-
-  // Check if sufficient balance exists
-  if (withdraw > balance) {
-    console.log("Insufficient balance. Withdrawal failed.");
-    attempts++; // This counts as an attempt
-    continue;
-  }
-
-  // Successful withdrawal
-  balance -= withdraw;
-  console.log(`Withdrawal successful. Remaining balance: ${balance}`);
-
-  attempts++; // Only successful / attempted withdrawal counts
+if(unit > 400) {
+    amount = (unit - 400) * 13;
+    unit = 400;
 }
 
-if (balance === 0) {
-  console.log("Account balance reached zero. No more withdrawals allowed.");
+if(unit > 200 && unit <= 400) {
+    amount = amount + (unit - 200)
+    unit = 200;
+}
+if(unit > 100 && unit <= 200) {
+    amount = amount + (unit - 100) * 6;
+    unit = 100;
 }
 
-if (attempts >= 3) {
-  console.log("Maximum attempts reached. Try again later.");
-}
-
-console.log(`Transaction ended. Final balance: ${balance}`);
-
-
-
-
+amount = amount + (unit*4.2)
+console.log(amount);
