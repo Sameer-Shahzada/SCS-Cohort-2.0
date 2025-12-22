@@ -6,7 +6,6 @@ const prompt = promptSync();
 const n = Number(prompt("Enter any number: "));
 
 // create a function 
-
 function printMessage(num) {
     if (Number.isNaN(num) || num < 0) {
         console.log("Invalid Input");
