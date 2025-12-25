@@ -192,7 +192,6 @@
 
 // let discount = 0;
 
-
 //   if (amount > 0 && amount <= 5000) {
 //     discount = 0;
 //   } else if(amount > 5000 && amount <=7000) {
@@ -205,29 +204,47 @@
 
 //   console.log('payable amount ' + (amount - (discount*amount)/100));
 
-
 // Shop discount - description on graphic
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// // Input from user
+// let unit = Number(prompt("Enter unit: "));
+// let amount = 0;
+
+// if(unit > 400) {
+//     amount = (unit - 400) * 13;
+//     unit = 400;
+// }
+
+// if(unit > 200 && unit <= 400) {
+//     amount = amount + (unit - 200)
+//     unit = 200;
+// }
+// if(unit > 100 && unit <= 200) {
+//     amount = amount + (unit - 100) * 6;
+//     unit = 100;
+// }
+
+// amount = amount + (unit*4.2)
+// console.log(amount);
 
 import promptSync from "prompt-sync";
 const prompt = promptSync();
 
-// Input from user 
-let unit = Number(prompt("Enter unit: "));
-let amount = 0;
+const n = Number(prompt("Enter a natural number: "));
 
-if(unit > 400) {
-    amount = (unit - 400) * 13;
-    unit = 400;
+function printNaturalNumgers(num) {
+  if (!Number.isInteger(num) || num < 1) {
+    console.log("Invalid Input");
+    return;
+  }
+  for (let i = 1; i <= num; i++) {
+    process.stdout.write(i.toString());
+    if (i < n) {
+      process.stdout.write(" ");
+    }
+  }
 }
-
-if(unit > 200 && unit <= 400) {
-    amount = amount + (unit - 200)
-    unit = 200;
-}
-if(unit > 100 && unit <= 200) {
-    amount = amount + (unit - 100) * 6;
-    unit = 100;
-}
-
-amount = amount + (unit*4.2)
-console.log(amount);
+printNaturalNumgers(n);
