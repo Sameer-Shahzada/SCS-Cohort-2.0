@@ -230,21 +230,38 @@
 // amount = amount + (unit*4.2)
 // console.log(amount);
 
-import promptSync from "prompt-sync";
-const prompt = promptSync();
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
 
-const n = Number(prompt("Enter a natural number: "));
+// const n = Number(prompt("Enter a natural number: "));
 
-function printNaturalNumgers(num) {
-  if (!Number.isInteger(num) || num < 1) {
-    console.log("Invalid Input");
-    return;
-  }
-  for (let i = 1; i <= num; i++) {
-    process.stdout.write(i.toString());
-    if (i < n) {
-      process.stdout.write(" ");
-    }
-  }
-}
-printNaturalNumgers(n);
+// function printNaturalNumgers(num) {
+//   if (!Number.isInteger(num) || num < 1) {
+//     console.log("Invalid Input");
+//     return;
+//   }
+//   for (let i = 1; i <= num; i++) {
+//     process.stdout.write(i.toString());
+//     if (i < n) {
+//       process.stdout.write(" ");
+//     }
+//   }
+// }
+// printNaturalNumgers(n);
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter any number: "));
+
+// // create a function to find out the factors
+// function findFactors(n) {
+//   let divisors = []; // an empty array to store the factors.
+//   for (let i = n; i >= 1; i--) {
+//     if (n % i === 0) {
+//       divisors.push(i);
+//     }
+//   }
+//   divisors.sort((a, b) => a - b).forEach((d) => console.log(d));
+// }
+// findFactors(num);
