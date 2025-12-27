@@ -299,3 +299,44 @@
 //   console.log("oddSum: ", oddSum);
 // }
 // sumEvenOddInRange(startRange, endRange);
+
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = parseInt(prompt("Enter a number: "));
+
+// function isPrime(n) {
+//   // Prime numbers must be greater than 1
+//   if (!Number.isInteger(n) || n <= 1) {
+//     return "Not a prime number";
+//   }
+
+//   // Check divisibility up to √n
+//   for (let i = 2; i * i <= n; i++) {
+//     if (n % i === 0) {
+//       return "Not a prime number";
+//     }
+//   }
+//   return "Prime number";
+// }
+// console.log(isPrime(num));
+
+import promptSync from "prompt-sync";
+const prompt = promptSync();
+
+const num = Number(prompt("Enter a number:"));
+
+let count = 0;
+
+function isPrime(n) {
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      count++;
+    }
+    if (count === 2) {
+      console.log("Prime Number");
+    }
+  }
+}
+isPrime(num);
