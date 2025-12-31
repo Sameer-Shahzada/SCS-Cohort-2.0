@@ -28,3 +28,12 @@ printSquarePattern(r, c);
     the inner loop controls columns. process.stdout.write() prints stars on the same line, 
     and console.log() moves the cursor to the next row after each iteration.”
 */
+
+/*
+
+* * * * 
+* * * * 
+* * * * 
+* * * * 
+
+*/

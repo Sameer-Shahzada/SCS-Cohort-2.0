@@ -23,3 +23,12 @@ function printSquarePattern(rows, cols) {
     return result;
 }
 console.log(printSquarePattern(r, c));
+
+/*
+
+* * * * 
+* * * * 
+* * * * 
+* * * * 
+
+*/
