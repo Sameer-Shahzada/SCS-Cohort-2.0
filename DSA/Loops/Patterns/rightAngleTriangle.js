@@ -17,8 +17,9 @@ function printRightAngleTriangle(rows) {
     for(let i = 1; i <= rows; i++) {
         // Inner loop: to control number of columns & print '*' for each column in a row
         for(let j = 1; j <= i; j++) {
-            result += '* ';     
-            // result += `${j}`;   // to print numbers instead of '* ';    
+            // result += '* ';     
+            // result += `${j}`;   // to print numbers instead of '* ';   
+            result += `${String.fromCharCode(64 + j)}`; // to print alphabets instead of '* '; 
         }
         result += '\n';
         
@@ -26,7 +27,7 @@ function printRightAngleTriangle(rows) {
     return result;
     
 }
-console.log(printRightAngleTriangle(5))
+console.log(printRightAngleTriangle(r));
 /**
 
 * 
