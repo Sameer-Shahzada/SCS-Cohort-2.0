@@ -300,6 +300,9 @@
 // }
 // sumEvenOddInRange(startRange, endRange);
 
+// ----------- | Prime Number Programs | -----------
+
+// -> 1st Approach
 
 // import promptSync from "prompt-sync";
 // const prompt = promptSync();
@@ -322,21 +325,477 @@
 // }
 // console.log(isPrime(num));
 
-import promptSync from "prompt-sync";
+// -> 2nd Approach
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// function isPrime(n) {
+//   if (!Number.isInteger(n) || n <= 1) {
+//     return "Not Prime";
+//   }
+
+//   let count = 0;
+
+//   for (let i = 1; i <= n; i++) {
+//     if (n % i === 0) {
+//       count++;
+//     }
+//   }
+
+//   return count === 2 ? "Prime" : "Not Prime";
+// }
+// console.log(isPrime(num));
+
+// -> 3rd Approach
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// // create a function to check prime number
+// function isPrime(n) {
+//   if (n <= 1) {
+//     console.log("not prime");
+//   } else {
+//     let count = 0;
+//     for (let i = 2; i <= n / 2; i++) {
+//       if (n % i == 0) {
+//         count++;
+//       }
+//     }
+//     if (count == 0) {
+//       console.log("prime number");
+//     } else {
+//       console.log("not a prime number");
+//     }
+//   }
+// }
+// isPrime(num);
+
+// -> 4th Approach
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// // create a function to check prime number
+// function isPrime(n) {
+//   if (n <= 1) {
+//     console.log("not prime");
+//   } else if (n == 2) {
+//     console.log("prime");
+//   } else if (n % 2 == 0) {
+//     console.log("not prime");
+//   } else {
+//     let isPrime = true;
+//     for (let i = 0; i <= Math.floor(Math.sqrt(n)); i += 2) {
+//       if (n % i == 0) {
+//         isPrime = false;
+//         break;
+//       }
+//     }
+//     console.log(isPrime ? "prime" : "not prime");
+//   }
+// }
+// isPrime(num);
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter base value: "));
+// const power = Number(prompt("Enter exponent value: "));
+
+// function calculatePower(base, exponent) {
+//   if (!Number.isInteger(base) || !Number.isInteger(exponent) || exponent < 0) {
+//     return "Invalid Input";
+//   }
+
+//   let result = 1;
+//   for (let i = 1; i <= exponent; i++) {
+//     result *= base;
+//   }
+//   return result;
+// }
+
+// console.log(calculatePower(num, power));
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number:"));
+
+// Function to check the given number is Strong Number or not
+// function strongNumber(digit) {
+//   if (!Number.isInteger(digit) || digit <= 0) {
+//     return "Invalid Input";
+//   }
+
+//   const digits = num.toString().split("");
+//   let sumOfFactorials = 0;
+
+//   digits.forEach((digit) => {
+//     let d = Number(digit);
+//     let fact = 1;
+
+//     for (let i = 1; i <= d; i++) {
+//       fact *= i;
+//     }
+
+//     sumOfFactorials += fact;
+//   });
+
+//   return sumOfFactorials === num ? "Strong Number" : "Not a Strong Number";
+// }
+// console.log(strongNumber(num));
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const n = Number(prompt("Enter a number: "));
+
+// function strongNumber(num) {
+//     let temp = num;
+//     let sum = 0;
+
+//     while (temp > 0) {
+//         let digit = temp % 10;
+//         let fact = 1;
+
+//         for (let i = 1; i <= digit; i++) {
+//             fact *= i;
+//         }
+
+//         sum += fact;
+//         temp = Math.floor(temp / 10);
+//     }
+
+//     return sum === num ? "Strong Number" : "Not a Strong Number";
+// }
+// console.log(strongNumber(n));
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// function reverseNumber(n) {
+//   if (!Number.isInteger(n) || n < 0) {
+//     return "Invalid Input";
+//   }
+
+//   if(n === 0) {
+//     return 0;
+//   }
+
+//   let rev = 0;
+
+//   while (n > 0) {
+//     rev = rev * 10 + (n % 10);
+//     n = Math.floor(n / 10);
+//   }
+
+//   return rev;
+// }
+
+// console.log(reverseNumber(num));
+
+// -> Reverse a Number Using recursion
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// function reverseNumber(n, rev = 0) {
+//     if (!Number.isInteger(n) || n < 0) {
+//         return "Invalid Input";
+//     }
+
+//     if (n === 0) {
+//         return rev;
+//     }
+
+//     return reverseNumber(
+//         Math.floor(n / 10),
+//         rev * 10 + (n % 10)
+//     );
+// }
+// console.log(reverseNumber(num));
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// function countDigits(n) {
+//     if (!Number.isInteger(n) || n < 0) {
+//         return "Invalid Input";
+//     }
+
+//     if (n === 0) return 1;
+
+//     let count = 0;
+//     while (n > 0) {
+//         count++;
+//         n = Math.floor(n / 10);
+//     }
+
+//     return count;
+// }
+// console.log(countDigits(num));
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const isbnNum = prompt("Enter a 10-digit ISBN number (without dashes): ");
+
+// function isISBNValid(isbn) {
+//   let copy = isbn,
+//     count = 0;
+
+//   while (isbn > 0) {
+//     count++;
+//     isbn = Math.floor(isbn / 10);
+//   }
+//   if (count !== 10) {
+//     return "Invalid ISBN Number";
+//   } else {
+//     let res = 0;
+//     while (copy > 0) {
+//       let digit = copy % 10;
+//       res = res + digit * count;
+//       count--;
+//       copy = Math.floor(copy / 10);
+//     }
+//     if (res % 11 === 0) {
+//       return "Valid ISBN Number";
+//     } else {
+//       return "Invalid ISBN Number";
+//     }
+//   }
+// }
+// console.log(isISBNValid(Number(isbnNum)));
+
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const system = Math.floor(Math.random() * 100) + 1;
+// function guessingGame(machine) {
+//     let guess;
+
+//     do {
+//         guess = Number(prompt("Guess a number between 1 and 100: "));
+
+//         if (!Number.isInteger(guess) || guess < 1 || guess > 100) {
+//             console.log("Invalid Number");
+//             continue;
+//         }
+
+//         if (guess > machine) {
+//             console.log("Too large number");
+//         } else if (guess < machine) {
+//             console.log("Too small number");
+//         } else {
+//             console.log("Congratulations! You guessed the correct number.");
+//         }
+
+//     } while (guess !== machine);
+// }
+
+// guessingGame(system);
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const num = Number(prompt("Enter a number: "));
+
+// function isHarshad(n) {
+//     if(!Number.isInteger(n) || n < 0) {
+//         return 'Invalid Input';
+//     }
+    
+//     if(n === 0) {
+//         return 'Not Harshad Number';
+//     }
+
+//     let original = n;
+//     let sum = 0;
+
+//     while(n > 0) {
+//         sum += n % 10;
+//         n = Math.floor(n / 10)
+//     }
+//     return original % sum === 0 ? 'Harshad Number' : 'Not Harshad Number';
+// }
+// console.log(isHarshad(num))
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const n = Number(prompt("Enter a number:"));
+
+// create a function 
+// function strongNumber(num) {
+//     if(!Number.isInteger(num) || num <= 0) {
+//         return 'Invalid Input';
+//     }
+
+//     let sum = 0; // to store the sum of factorials of digits
+
+//     // Outer loop: extracts digits one by one
+//     for(let temp = num; temp > 0; temp = Math.floor(temp / 10)) {
+//         let digit = temp % 10; // to extract the last digit of temp number
+//         let fact = 1;
+
+//         // Inner loop: calculates factorial of the digit
+//         for(let i = 1; i <= digit; i++) {
+//             fact *= i;
+//         }
+//         sum += fact; // Adds the factorial of the current digit to sum.
+//     }
+//     return sum === num ? "Strong Number" : "Not a Strong Number";
+// }
+
+// console.log(strongNumber(n));
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const r = Number(prompt("Enter a number for rows: "));
+// const c = Number(prompt("Enter a number for columns: "));
+
+// function squarePattern(rows, cols) {
+//     if (!Number.isInteger(rows) || !Number.isInteger(cols) || rows <= 0 || cols <= 0) {
+//         return "Invalid Input";
+//     }
+
+//     for(let i = 1; i <= rows; i++) {
+//         for(let j = 1; j <= cols; j++) {
+//             process.stdout.write("* ");
+//         }
+//         console.log();
+//     }
+// }
+// squarePattern(r, c);
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const r = Number(prompt("Enter a number for rows: "));
+// const c = Number(prompt("Enter a number for columns: "));
+
+// function printSquarePattern(rows, cols) {
+//     if(!Number.isInteger(rows) || !Number.isInteger(cols) || rows <= 0 || cols <= 0) {
+//         return "Invalid Input";
+//     } 
+
+//     let result = ''; 
+//     // Outer loop 
+//     for(let i = 1; i <= rows; i++) {
+//         // Inner Loop 
+//         for(let j = 1; j <= cols; j++) {
+//             result += '* '; // Append '*' and a space to result string
+//         }
+//         result += '\n'; // Append newline character after each row
+//     }
+//     return result;
+// }
+// console.log(printSquarePattern(r, c));
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const r = Number(prompt("Enter a number for rows: "));
+
+// function printInvertedRightAngeldTriangle(rows) {
+//     let result = '';
+    
+//     // Outer loop
+//     for(let i = 1; i <= rows; i++) {
+//         // Inner Loop
+//         for(let j = rows; j >= i; j--) {
+//             result += '* ';
+//         }
+//         result += '\n';
+//     }
+//     return result;
+    
+// }
+// console.log(printInvertedRightAngeldTriangle(r));
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const r = Number(prompt("Enter a number for rows: "));
+
+// function printMirrorRightAngleTriangle(rows) {
+
+//     if(!Number.isInteger(rows) || rows <= 0) {
+//         return "Invalid Input";
+//     }
+
+//     let result = '';
+
+//     // Outer loop 
+//     for(let i = 1; i <= rows; i++) {
+//         // Inner loop: print leading spaces. Spaces decrease as row number increases
+//         for(let j = 1; j <= rows -i; j++) {
+//             result += '  ';
+//         }
+//         // Inner loop: print stars. Stars increase as row number increases | right angle triangle part 
+//         for(let j = 1; j <= i; j++) {
+//             result += '* ';
+//         }
+//         // Move cursor to next line after completing one row
+//         result += '\n';
+//     }
+//     return result;
+// }
+// console.log(printMirrorRightAngleTriangle(r));
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const r = Number(prompt("Enter a number for rows: "));
+
+// function printRightAngleTriangle(rows) {
+
+//     if(!Number.isInteger(rows) || rows <= 0) {
+//         return "Invalid Input";
+//     }
+
+//     let result = '';
+    
+//     // Outer loop: to control number of rows
+//     for(let i = 1; i <= rows; i++) {
+//         // Inner loop: to control number of columns & print '*' for each column in a row
+//         for(let j = 1; j <= i; j++) {
+//             // result += '* ';     
+//             // result += `${j}`;   // to print numbers instead of '* ';    
+//             result += `${String.fromCharCode(64 + j)}`; // to print alphabets instead of '* ';
+//         }
+//         result += '\n';
+        
+//     }
+//     return result;
+    
+// }
+// console.log(printRightAngleTriangle(r));
+
+import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
-const num = Number(prompt("Enter a number:"));
+const n = Number(prompt('Enter a number: '));
 
-let count = 0;
+const arr = new Array(n);
+// const arr = [];
 
-function isPrime(n) {
-  for (let i = 1; i <= n; i++) {
-    if (n % i === 0) {
-      count++;
-    }
-    if (count === 2) {
-      console.log("Prime Number");
-    }
-  }
+for(let i = 0; i <= arr.length; i++) {
+    arr[i] = Number(prompt("Enter a value: "));
 }
-isPrime(num);
+
+console.log(arr)
