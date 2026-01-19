@@ -1,0 +1,191 @@
+Below is a complete, structured list of software design patterns, ordered from basic to advanced, 
+following the classical GoF (Gang of Four) classification plus modern / architectural patterns.
+
+This is an industry-standard roadmap you can safely use for learning, interviews, 
+and system design discussions.
+
+1. Creational Design Patterns
+(Focus: Object creation logic)
+
+These patterns answer:
+    How objects should be created and managed
+
+Basic → Advanced
+
+1-Singleton
+    Ensure only one instance exists
+
+2-Factory Method
+    Delegate object creation to subclasses or logic
+
+3-Abstract Factory
+    Create families of related objects
+
+4-Builder
+    Construct complex objects step-by-step
+
+5-Prototype
+    Clone existing objects instead of creating new ones
+
+//---------------------------------------------------------------------------//
+
+2. Structural Design Patterns
+(Focus: Object composition and structure)
+
+These patterns answer:
+    How objects and classes are composed
+
+Basic → Advanced
+6-Module Pattern (JavaScript-specific, foundational)
+    Encapsulation and private state
+
+7-Adapter
+    Make incompatible interfaces work together
+
+8-Decorator
+    Add behavior dynamically without modifying structure
+
+9-Facade
+    Simplified interface over a complex system
+
+10-Composite
+    Treat individual and group objects uniformly
+
+11-Proxy
+    Control access to another object
+
+12-Flyweight
+    Optimize memory usage by sharing data
+
+13-Bridge
+    Separate abstraction from implementation
+
+3. Behavioral Design Patterns
+(Focus: Object interaction and behavior)
+
+These patterns answer:
+    How objects communicate and assign responsibility
+
+Basic → Advanced
+
+14-Observer
+    One-to-many notification system
+
+15-Strategy
+    Switch algorithms at runtime
+
+16-Command
+    Encapsulate requests as objects
+
+17-Iterator
+    Access elements sequentially without exposing structure
+
+18-Mediator
+    Centralized communication between objects
+
+19-State
+    Change behavior based on internal state
+
+20-Chain of Responsibility
+    Pass request through handlers
+
+21-Template Method
+    Define algorithm skeleton, defer steps
+
+22-Memento
+    Capture and restore object state
+
+23-Visitor
+    Add operations without modifying objects
+
+24-Interpreter
+    Define grammar and interpret expressions
+
+//----------------------------------------------------------------------//
+
+4. JavaScript & Modern Patterns (Practical & Industry-Used)
+These are not official GoF, but heavily used in real systems.
+
+Foundational
+25- Revealing Module Pattern
+26- IIFE Pattern
+27- Namespace Pattern
+28- Mixin Pattern
+
+Application-Level
+29- MVC (Model–View–Controller)
+30- MVP (Model–View–Presenter)
+31- MVVM (Model–View–ViewModel)
+
+Data & State
+32- Flux
+33- Redux Pattern
+34- Event Bus / Pub-Sub (Observer variant)
+
+Architecture
+35- Dependency Injection (DI)
+36- Service Locator
+37- Repository Pattern
+38- Unit of Work
+
+5. Advanced / Architectural Patterns
+(Used in large-scale systems)
+
+39- CQRS (Command Query Responsibility Segregation)
+40- Event Sourcing
+41- Microservices Pattern
+42- Saga Pattern
+43- Circuit Breaker
+44- Bulkhead Pattern
+45- API Gateway Pattern
+46- Strangler Fig Pattern
+
+
+6. Learning Roadmap (Recommended Order)
+Since you are already learning systematically, follow this order:
+
+Phase 1 – Foundations
+- Module
+- Factory
+- Singleton
+- Observer
+- Strategy
+
+Phase 2 – Core Patterns
+- Decorator
+- Facade
+- Adapter
+- Command
+- State
+
+Phase 3 – Advanced Thinking
+- Builder
+- Abstract Factory
+- Mediator
+- Chain of Responsibility
+
+Phase 4 – Architecture
+- MVC / MVVM
+- Dependency Injection
+- Event-driven patterns
+- CQRS & Event Sourcing
+
+7. Interview Reality Check (Important)
+
+In real interviews:
+You are not expected to memorize all
+    You are expected to:
+        Recognize the pattern
+        Explain why it’s used
+        Apply it to a real problem
+
+# Knowing 10–12 patterns deeply is better than knowing 40 shallowly.
+
+8. Key Takeaway
+    Design patterns are not code recipes — they are problem-solving mindsets.
+
+You are already learning them the right way:
+    With reasoning
+    With examples
+    With architecture thinking
+
