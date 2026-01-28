@@ -579,7 +579,6 @@
 // }
 // console.log(isISBNValid(Number(isbnNum)));
 
-
 // import promptSync from 'prompt-sync';
 // const prompt = promptSync();
 
@@ -617,7 +616,7 @@
 //     if(!Number.isInteger(n) || n < 0) {
 //         return 'Invalid Input';
 //     }
-    
+
 //     if(n === 0) {
 //         return 'Not Harshad Number';
 //     }
@@ -638,7 +637,7 @@
 
 // const n = Number(prompt("Enter a number:"));
 
-// create a function 
+// create a function
 // function strongNumber(num) {
 //     if(!Number.isInteger(num) || num <= 0) {
 //         return 'Invalid Input';
@@ -691,12 +690,12 @@
 // function printSquarePattern(rows, cols) {
 //     if(!Number.isInteger(rows) || !Number.isInteger(cols) || rows <= 0 || cols <= 0) {
 //         return "Invalid Input";
-//     } 
+//     }
 
-//     let result = ''; 
-//     // Outer loop 
+//     let result = '';
+//     // Outer loop
 //     for(let i = 1; i <= rows; i++) {
-//         // Inner Loop 
+//         // Inner Loop
 //         for(let j = 1; j <= cols; j++) {
 //             result += '* '; // Append '*' and a space to result string
 //         }
@@ -713,7 +712,7 @@
 
 // function printInvertedRightAngeldTriangle(rows) {
 //     let result = '';
-    
+
 //     // Outer loop
 //     for(let i = 1; i <= rows; i++) {
 //         // Inner Loop
@@ -723,7 +722,7 @@
 //         result += '\n';
 //     }
 //     return result;
-    
+
 // }
 // console.log(printInvertedRightAngeldTriangle(r));
 
@@ -740,13 +739,13 @@
 
 //     let result = '';
 
-//     // Outer loop 
+//     // Outer loop
 //     for(let i = 1; i <= rows; i++) {
 //         // Inner loop: print leading spaces. Spaces decrease as row number increases
 //         for(let j = 1; j <= rows -i; j++) {
 //             result += '  ';
 //         }
-//         // Inner loop: print stars. Stars increase as row number increases | right angle triangle part 
+//         // Inner loop: print stars. Stars increase as row number increases | right angle triangle part
 //         for(let j = 1; j <= i; j++) {
 //             result += '* ';
 //         }
@@ -769,33 +768,105 @@
 //     }
 
 //     let result = '';
-    
+
 //     // Outer loop: to control number of rows
 //     for(let i = 1; i <= rows; i++) {
 //         // Inner loop: to control number of columns & print '*' for each column in a row
 //         for(let j = 1; j <= i; j++) {
-//             // result += '* ';     
-//             // result += `${j}`;   // to print numbers instead of '* ';    
+//             // result += '* ';
+//             // result += `${j}`;   // to print numbers instead of '* ';
 //             result += `${String.fromCharCode(64 + j)}`; // to print alphabets instead of '* ';
 //         }
 //         result += '\n';
-        
+
 //     }
 //     return result;
-    
+
 // }
 // console.log(printRightAngleTriangle(r));
 
-import promptSync from 'prompt-sync';
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const n = Number(prompt("Enter number of elements: "));
+
+// function readArrayElements(size) {
+//   if (!Number.isInteger(size) || size <= 0) {
+//      return 'Invalid Input';
+//   }
+//   const arr = new Array(size);
+
+//   for (let i = 0; i < size; i++) {
+//     arr[i] = Number(prompt(`Enter value ${i + 1}: `));
+//   }
+
+//   return arr;
+// }
+// console.log(readArrayElements(n));
+
+// import promptSync from 'prompt-sync';
+// const prompt = promptSync();
+
+// const n = Number(prompt("Enter the number of array elements: "));
+
+// function readArrayElements(size) {
+//     if(!Number.isInteger(size) || size <= 0) {
+//         return "Invalid Input";
+//     }
+
+//     const arr = []; // Initialize an empty array
+
+//     for(let i = 0; i < size; i++) {
+//         const elements = Number(prompt(`Enter element ${i + 1}: `));
+//         arr.push(elements); // Add the element to the array
+//     }
+//     return arr; // return the populated array
+
+// }
+// console.log(readArrayElements(n));
+
+// import promptSync from "prompt-sync";
+// const prompt = promptSync();
+
+// const n = Number(prompt("Enter the size of array: "));
+
+// function sumOfArrElem(size) {
+//   if (!Number.isInteger(size) || size <= 0) {
+//     return `Invalid Input`;
+//   }
+
+//   const arr = []; // Initialize an empty array
+//   let sum = 0;
+
+//   for (let i = 0; i < size; i++) {
+//     const elements = Number(prompt(`Enter element ${i + 1}: `));
+//     arr.push(elements);
+//     sum += arr;
+//   }
+//   return sum;
+// }
+
+// console.log(sumOfArrElem(n));
+
+import promptSync from "prompt-sync";
 const prompt = promptSync();
 
-const n = Number(prompt('Enter a number: '));
+const n = Number(prompt("Please enter the size of array: "));
 
-const arr = new Array(n);
-// const arr = [];
+function sumOfArrElements(size) {
+     if (!Number.isInteger(size) || size <= 0) {
+        return 'Invalid Input';
+    }
 
-for(let i = 0; i <= arr.length; i++) {
-    arr[i] = Number(prompt("Enter a value: "));
+  const arr = []; // Initialize an empty array
+  let sum = 0;
+
+  for (let i = 0; i < size; i++) {
+    const elem = Number(prompt(`Please enter value of element ${i + 1}: `));
+    arr.push(elem);
+    sum += elem;
+  }
+
+  return { arr, sum };
 }
-
-console.log(arr)
+console.log(sumOfArrElements(n));
