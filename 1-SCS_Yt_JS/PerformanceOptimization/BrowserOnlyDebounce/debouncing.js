@@ -5,7 +5,7 @@
  * the user stops triggering the event.
  */
 
-function debounce(func, delay) {
+function debounce(fn, delay) {
   let timeoutId;
   return function (...args) {
      // Clear any existing timeout
@@ -13,8 +13,8 @@ function debounce(func, delay) {
 
     // Set a new timeout to execute the function after the delay
     timeoutId = setTimeout(function () {
-      func(...args);
-      // func.apply(this, args); // preserves event context | Use apply to pass arguments and context
+      // fn(...args);
+      fn.apply(this, args); // preserves event context | Use apply to pass arguments and context
     }, delay);
   };
 }
@@ -33,6 +33,4 @@ input.addEventListener(
 - What to Say If Interviewer Asks “Why Not Arrow Function?”
     “Arrow functions don’t have their own this, so for DOM event handlers I prefer regular functions 
     to preserve the element context.”
-
-
 */
