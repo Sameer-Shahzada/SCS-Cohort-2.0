@@ -1,0 +1,46 @@
+/* Write a program to swap two numbers without using a temp variable by arithmetic operators
+    - Take input from the user
+    - Also Prove this statement:  
+        A function should return a result so you can use that result later in your program.
+*/
+
+import promptSync from "prompt-sync";
+const prompt = promptSync();
+
+function swapNumbers(a, b) {
+  console.log(`Before Swapping: a = ${a}, b = ${b}`);
+
+  // swapping logic 5 10
+  a = a + b;  // a = 15
+  b = a - b;  // b = 5
+  a = a - b;  // a = 10
+
+  console.log(`After Swapping: a = ${a}, b = ${b}`);
+
+  // Returning swapped values so they can be used later in the program
+  return { a, b };
+
+  /*
+    👉 Because the original variables did NOT change.
+    Inside the function, a and b were copies, not the real variables.
+  */
+}
+
+let a = parseInt(prompt("Enter first number: "));
+let b = parseInt(prompt("Enter second number: "));
+// -> use parseInt to convert string input to number because prompt returns string
+
+if (isNaN(a) || isNaN(b)) {
+  console.log("Invalid number");
+} else {
+   // Capture the returned swapped values
+  const result = swapNumbers(a, b);
+
+  // Now we can USE the swapped result later in the program
+  console.log("Using swapped values later in program:");
+  console.log("New a:", result.a);
+  console.log("New b:", result.b);
+}
+
+console.log("Original input values remain unchanged:", a, b);
+
