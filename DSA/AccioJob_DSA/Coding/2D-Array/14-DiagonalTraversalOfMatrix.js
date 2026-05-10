@@ -54,3 +54,46 @@ Arrays
 
 */
 
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+function diagonalTraversalMatrix(mat) {
+  let n = mat.length;
+
+  let result = [];
+
+  // START from top row (right → left)
+  for (let col = n - 1; col >= 0; col--) {
+    let i = 0;
+    let j = col;
+
+    // move diagonally down-right
+    while (i < n && j < n) {
+      result.push(mat[i][j]);
+
+      i++;
+      j++;
+    }
+  }
+
+  // START from left column (top already covered)
+  for (let row = 1; row < n; row++) {
+    let i = row;
+    let j = 0;
+
+    // move diagonally down-right
+    while (i < n && j < n) {
+      result.push(mat[i][j]);
+
+      i++;
+      j++;
+    }
+  }
+
+  console.log(result.join(" "));
+}
+
+diagonalTraversalMatrix(matrix);

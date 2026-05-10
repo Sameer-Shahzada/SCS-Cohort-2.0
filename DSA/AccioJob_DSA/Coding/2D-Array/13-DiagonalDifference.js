@@ -48,5 +48,95 @@ Note: |x| is the absolute value of x (|x| is always non negative for all x)
 
 Topics: 2D-Arrays
 Coding
+----------------------------------------------------------------------------------
+primarySum += mat[i][i];
+
+Primary diagonal:
+top-left → bottom-right
+secondarySum += mat[i][n - 1 - i];
+
+Secondary diagonal:
+top-right → bottom-left
+
+🔍 Example
+
+Matrix:
+
+1 2 3
+4 5 6
+7 8 9
+
+Primary diagonal
+
+Indices:
+
+(0,0) = 1
+(1,1) = 5
+(2,2) = 9
+
+Sum: 15
+
+Secondary diagonal
+
+Indices:
+
+(0,2) = 3
+(1,1) = 5
+(2,0) = 7
+
+Sum: 15
+
+Difference:
+
+|15 - 15| = 0
+✅ Best Part of Your Code
+
+This line:
+secondarySum += mat[i][n - 1 - i];
+is the most important matrix formula.
+
+🧠 Why n - 1 - i ?
+
+For n = 3
+Secondary diagonal indices:
+
+i	j = n-1-i
+0	2
+1	1
+2	0
+
+Pattern:
+
+(0,2)
+(1,1)
+(2,0)
+
+⚡ Complexity
+Complexity	Value
+Time	O(n)
+Space	O(1)
+
+Very optimal. ✅
+
 */
 
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [9, 8, 9],
+];
+
+function diagonalDifference(mat) {
+  let n = mat.length;  
+  let primarySum = 0;
+  let secondarySum = 0;
+
+  for (let i = 0; i < n; i++) {
+    primarySum += mat[i][i];
+    secondarySum += mat[i][n - 1 - i];
+  }
+
+  console.log(Math.abs(primarySum - secondarySum));
+}
+
+diagonalDifference(matrix);

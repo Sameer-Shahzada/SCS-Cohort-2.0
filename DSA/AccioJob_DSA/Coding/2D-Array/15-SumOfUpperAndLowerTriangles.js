@@ -52,3 +52,73 @@ Constraints
 Topics: Math
 2D-Arrays
 */
+
+/*
+
+This problem is based on identifying:
+
+🧠 Triangle Conditions
+✅ Upper Triangle
+
+Includes: diagonal + above diagonal
+
+Condition: j >= i
+
+✅ Lower Triangle
+
+Includes: diagonal + below diagonal
+
+Condition: i >= j
+
+🔍 Example
+
+Matrix:
+
+1 2 3
+1 5 3
+4 5 6
+
+Upper Triangle
+1 2 3
+  5 3
+    6
+
+Sum: 1+2+3+5+3+6 = 20
+
+Lower Triangle
+1
+1 5
+4 5 6
+
+Sum: 1+1+5+4+5+6 = 22
+
+*/
+
+let matrix = [
+  [1, 2, 3],
+  [1, 5, 3],
+  [4, 5, 6],
+];
+
+function triangleSums(mat) {
+  let upperSum = 0;
+  let lowerSum = 0;
+  let n = mat.length;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      // upper triangle
+      if (j >= i) {
+        upperSum += mat[i][j];
+      }
+
+      // lower triangle
+      if (i >= j) {
+        lowerSum += mat[i][j];
+      }
+    }
+  }
+
+  console.log(upperSum + " " + lowerSum);
+}
+triangleSums(matrix);
