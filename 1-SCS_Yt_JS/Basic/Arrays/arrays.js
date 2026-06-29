@@ -8,8 +8,19 @@ fruits.unshift('kiwi')  // add at the begining of the array
 console.log(fruits)
 
 // replace guava with pomengranate in the above array 
-fruits.pop('guava');
-fruits.push('pomengranate');
+
+// 1st way 
+// fruits.pop('guava');
+// fruits.push('pomengranate');
+// console.log(fruits);
+
+// 2nd way  
+
+let index = fruits.indexOf('guava');
+if(index !== -1) {
+    // fruits[index] = 'pomengranate'
+    fruits.splice(index, 1, 'pomengranate')
+}
 console.log(fruits);
 
 // ----------------------------------------------- //
