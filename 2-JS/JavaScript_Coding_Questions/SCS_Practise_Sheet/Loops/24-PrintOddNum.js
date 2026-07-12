@@ -2,10 +2,10 @@
 
 function printOddNumbers(start, end) {
     for (let i = start; i < end; i++) {
-        if (i % 2 === 0) {
+        if (i % 2 !== 0) {
+            console.log(i)
             continue;
         }
-        console.log(i)
     }
 }
 printOddNumbers(1, 21);
@@ -15,7 +15,7 @@ printOddNumbers(1, 21);
 
 // function printOddNumbers(start, end) {
 //     for (let i = start; i < end; i++) {
-//         if (i % 2 === 0) {
+//         if (i % 2 !== 0) {
 //            console.log(i)
 //         }       
 //     }
