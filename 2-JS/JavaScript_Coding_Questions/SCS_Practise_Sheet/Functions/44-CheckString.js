@@ -31,4 +31,4 @@ function checkStrWithChar(str, char) {
         return false
     }
 }
-console.log(checkStrWithChar('Sameer','a')); 
+console.log(checkStrWithChar('Sameer','S')); 
