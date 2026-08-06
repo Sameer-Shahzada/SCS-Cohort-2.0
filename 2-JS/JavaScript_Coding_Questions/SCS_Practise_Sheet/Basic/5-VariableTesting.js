@@ -6,4 +6,4 @@ console.log(name) // Suraj
 
 name = "Mohan";
 
-console.log(name) // 
+console.log(name) // Mohan
