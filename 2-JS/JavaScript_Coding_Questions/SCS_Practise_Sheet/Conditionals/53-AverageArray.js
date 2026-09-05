@@ -19,7 +19,6 @@ function averageOfArrayElements(arr) {
     // calculate sum of elements
     for (let i = 0; i < arr.length; i++) {
         sum += arr[i];
-        average = sum / arr.length;
     }
 
     // calculate average after summing

@@ -21,5 +21,5 @@ function isPalindrome (str) {
     return reversed === str;
 }
 
-// console.log(isPalindrome('sameer')); // true
-console.log(isPalindrome('madam')); // false
+// console.log(isPalindrome('sameer')); // false
+console.log(isPalindrome('madam')); // true

@@ -3,7 +3,7 @@
 function isPrime(n) {
     // Prime numbers must be greater than 1
     if(!Number.isInteger(n) || n <= 1) {
-        return `Not a prime number``
+        return `Not a prime number`
     }
 
     // Check divisibility up to √n
