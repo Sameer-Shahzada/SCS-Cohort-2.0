@@ -452,4 +452,365 @@ throttledHandleScroll(); // This call will be ignored due to throttle
 throttledHandleScroll(); // This call will also be ignored due to throttle
 
 
+From SCS_YT_JS 
+// 1- for in loop to iterate over object properties
+const person = {
+    name: "Alice",
+    age: 30,
+    city: "New York"
+};
+for (const key in person) { 
+    console.log(key + ": " + person[key]);
+}
+
+// 2- for of loop to iterate over array elements
+const colors = ["red", "green", "blue"];
+for (const color of colors) {
+    console.log(color);
+}
+
+// 3- Object.keys() to get an array of object keys
+const car = {
+    make: "Toyota", 
+    model: "Camry",
+    year: 2020
+};
+const keys = Object.keys(car);
+console.log(keys);
+
+// 4- Object.values() to get an array of object values
+const values = Object.values(car);
+console.log(values);
+
+// 5- Object.entries() to get an array of key-value pairs
+const entries = Object.entries(car);
+console.log(entries);
+
+// 6- Using hasOwnProperty() to check if an object has a specific property
+if (car.hasOwnProperty('model')) {
+    console.log("The car object has the property 'model'.");
+} else {
+    console.log("The car object does not have the property 'model'.");
+}
+
+// 7- Merging two objects using Object.assign()
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const mergedObj = Object.assign({}, obj1, obj2);
+console.log(mergedObj); // { a: 1, b: 3, c: 4 }
+
+// 8- Merging two objects using spread operator
+const mergedObjSpread = { ...obj1, ...obj2 };
+console.log(mergedObjSpread); // { a: 1, b: 3, c: 4 }
+
+// 9- Destructuring an object to extract properties
+const { name, age } = person;
+console.log("Name:", name);
+console.log("Age:", age);
+
+// 10- Using JSON.stringify() to convert an object to a JSON string
+const jsonString = JSON.stringify(person);
+console.log(jsonString);
+
+// 11- Using JSON.parse() to convert a JSON string back to an object
+const jsonObject = JSON.parse(jsonString);
+console.log(jsonObject);
+
+// 12- Freezing an object to prevent modifications
+const frozenPerson = Object.freeze(person);
+frozenPerson.age = 35;
+console.log(frozenPerson.age); // 30, modification won't take effect
+
+// 13- deep cloning an object using stringify and parse
+const deepClonedPerson = JSON.parse(JSON.stringify(person));
+deepClonedPerson.city = "Los Angeles";
+console.log(deepClonedPerson.city); // Los Angeles
+console.log(person.city); // New York 
+
+//14 - computed property names in object literals
+const propName = "country";
+const user = {
+    name: "John",
+    [propName]: "USA"
+};
+console.log(user.country); // USA
+
+
+
+React Performance Optimization 
+
+Browser Only Debounce 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+<body>
+    <input type="text">
+    <script src="debouncing.js"></script>
+</body>
+</html>
+
+/
+ * Debounce
+ * --------
+ * Delays execution of a function until
+ * the user stops triggering the event.
+ /
+
+function debounce(fn, delay) {
+  let timeoutId;
+  return function (...args) {
+     // Clear any existing timeout
+    clearTimeout(timeoutId);
+
+    // Set a new timeout to execute the function after the delay
+    timeoutId = setTimeout(function () {
+      // fn(...args);
+      fn.apply(this, args); // preserves event context | Use apply to pass arguments and context
+    }, delay);
+  };
+}
+
+const input = document.querySelector("input");
+
+input.addEventListener(
+  "input",
+  debounce(function (event) {
+    // console.log("Input event fired:", "hey");
+    console.log("Input value:", event.target.value); // more realistic usage 
+  }, 1000),
+);
+
+/-
+- What to Say If Interviewer Asks “Why Not Arrow Function?”
+    “Arrow functions don’t have their own this, so for DOM event handlers I prefer regular functions 
+    to preserve the element context.”
+-/
+
+
+-----------------------------
+Browser Only Throttle
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttling</title>
+</head>
+<body>
+    <input type="text" />
+    <script src="throttling.js"></script>
+</body>
+</html>
+
+/
+ * Throttle
+ * --------
+ * Ensures a function executes at most once within a specified time interval.
+ * 
+/
+
+function throttle(fn, delay) {
+    let lastExecutionTime = 0;
+    return function (...args) {
+        let now = Date.now();
+        // Allow execution only if delay has passed
+        if (now - lastExecutionTime >= delay) {
+            lastExecutionTime = now;
+            // fn(...args);
+            fn.apply(this, args); // preserves event context | Use apply to pass arguments and context
+        }
+    };
+}
+
+const input = document.querySelector("input");
+// Throttled input handler (e.g. API rate limiting)
+input.addEventListener("input",
+    throttle(function (event) {
+        // console.log("ran");
+        console.log("Searching for:", event.target.value);
+    }, 1000)
+)
+
+/-
+Interview Explanation (Say This Confidently)
+    “Throttle allows the input handler to run at most once every second, even if the user types continuously.”
+
+Common Interview Follow-Up Question
+Q: Why not use debounce here?
+    “Throttle is used when we want regular updates at fixed intervals, whereas debounce waits until the user stops typing.”
+-/
+
+Lazy loading
+let imgs = document.querySelectorAll("img");
+
+const observer = new IntersectionObserver(
+    function (entries, observer) {
+        entries.forEach((function (entry) {
+            if(entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add("loaded");
+                observer.unobserve(entry);
+            }
+        }))
+    },
+    {
+        root: null,
+        threshold:0.1
+    }
+)
+
+imgs.forEach(function(img) {
+    observer.observe(img)
+});
+
+
+Memory Leaks 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Leaks:- Timers and Event Listeners</title>
+</head>
+<body>
+    <script src="script.js"></script>
+</body>
+</html>
+
+let count = 0;
+const int = setInterval(() => {
+    if(count < 10) {
+        count++;
+        console.log(count);
+    } else {
+        // console.log("still chal raha hai"); // memory leaks
+        clearInterval(int);
+        console.log('finished');
+    }
+},500)
+
+
+/ ------------------------------------------
+ * Debouncing (Node.js Console version only)
+ * -----------------------------------------
+
+Debouncing is a technique used to delay the execution of a function until a certain amount of time has 
+passed since the last time it was invoked.
+
+This helps to prevent a function from running unnecessary repeated executions, such as
+firing API calls on every keystroke while typing, scrolling or resizing.
+
+/
+function debounce(fn, delay) {
+  // Stores the active timeout ID between calls
+  let timeoutId;
+  /--
+   * Returned function forms a closure over `timeoutId`
+   * and is executed on every invocation.
+   --/
+  return function (...args) {
+    clearTimeout(timeoutId); // Cancel the previously scheduled execution (if any)
+    // Schedule a new timeout to execute the function after the delay
+    timeoutId = setTimeout(() => {
+      // fn(...args);
+      fn.apply(this, args); // Use apply to pass arguments and context
+      /--
+       * `apply` ensures that:
+       * - Arguments are passed correctly
+       * - Original `this` context is preserved
+       --/
+    }, delay);
+  };
+}
+
+/--
+ * Simulated search function
+ * In real applications, this would trigger an API call
+ -- /
+const search = (query) => {
+  console.log(`Searching for`, query);
+};
+
+// Create a debounced version of the search function with a 1 second delay
+const searchWithDebounce = debounce(search, 1000);
+
+// Simulate fast user typing
+searchWithDebounce("H");
+searchWithDebounce("HE");
+searchWithDebounce("HEL");
+searchWithDebounce("HELL");
+searchWithDebounce("HELLO");
+
+// Only the last call will execute after 1 second
+
+/* 
+Some Important talking points for Interview:
+
+1- Interview-Ready Explanation (Verbal)
+    “Each time the debounced function is called, the previous timer is cleared and a new one is set. 
+    Only when the calls stop for the given delay does the function finally execute.”
+
+2- If Interviewer Asks: “Why Use Closure Here?”
+    “The closure allows the debounced function to remember the timeout ID between invocations, 
+    which is essential to cancel previous executions.”
+
+3- If Interviewer Asks: “Is This Browser-Only?”
+    “No, debounce is a JavaScript concept. It works in Node.js as well because 
+    setTimeout is part of the event loop, not the browser”
+/
+-------------------
+
+/--
+ * Throttle
+ * --------
+ * Ensures a function is executed at most once within a specified time interval.
+ * 
+ --/
+
+function throttle(fn, delay) {
+    let lastExecutionTime  = 0;
+
+    return function (...args) {
+        const now = Date.now();
+        if(now - lastExecutionTime  < delay) {
+            return;
+        }
+        lastExecutionTime  = now;
+        // return fn(...args)
+        return fn.apply(this, args); // preserves event context | Use apply to pass arguments and context
+    };
+}
+
+function sendChatMessage(message) {
+    console.log(`Sending Message`, message)
+}
+
+// Simulate chat slow-mode (1 message every 2 seconds)
+const sendChatMessageWithSlowMode = throttle(sendChatMessage, 2 * 1000);
+
+sendChatMessageWithSlowMode("Hi")
+sendChatMessageWithSlowMode("Hello")
+sendChatMessageWithSlowMode("Hello Ji")
+sendChatMessageWithSlowMode("When will next cohort coming")
+sendChatMessageWithSlowMode("What will be the discount for upcoming cohort");
+
+/--
+Interview One-Liner (Very Important)
+    “Throttle ensures a function runs at most once in a given time window, regardless of how many times it’s triggered.”
+
+If Interviewer Asks: “Throttle vs Debounce?”
+    “Debounce waits until events stop, throttle allows execution at fixed intervals.”
+
+--/
+
+
+
+
 */
