@@ -18,7 +18,8 @@ ul.appendChild(space);
 
 What is DocumentFragment?
 
-A DocumentFragment is a lightweight, temporary container used to build DOM nodes off-screen before inserting them into the document.
+A DocumentFragment is a lightweight, temporary container used to build DOM nodes off-screen before inserting 
+them into the document.
 
 Important properties:
 
